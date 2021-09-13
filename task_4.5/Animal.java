@@ -1,4 +1,4 @@
-public class Animal {
+public abstract class Animal {
 	boolean vegetarian; // травоядное
 	String speak; // звуки издает
 	byte paws; // лапы
