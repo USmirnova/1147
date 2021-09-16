@@ -9,11 +9,11 @@ public class Hotel {
 		for (int i = 0; i < rooms.length; i++) {
 			if (rooms[i].getRoomNumber()==roomNumber) {
 				System.out.print("Свойства комнаты №"+rooms[i].getRoomNumber()+": "
-						+"Спальных мест: "+rooms[i].getQuantity()+"; "
-						+"Wc: "+rooms[i].isWc()+"; "
-						+"Eat: "+rooms[i].isEat()+"; "
-						+"Wifi: "+rooms[i].isWifi()+"; "
-						+"isFree: "+rooms[i].isFree()+". \n"
+						+"Спальных мест:"+rooms[i].getQuantity()+"; "
+						+"Wc:"+rooms[i].isWc()+"; "
+						+"Eat:"+rooms[i].isEat()+"; "
+						+"Wifi:"+rooms[i].isWifi()+"; "
+						+"isFree:"+rooms[i].isFree()+". \n"
 				);
 			}
 		}
