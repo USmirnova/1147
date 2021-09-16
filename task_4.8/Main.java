@@ -28,10 +28,9 @@ public static void main(String[] args) {
 	};
 	Hotel hotel = new Hotel(rooms);
 	Scanner scanner = new Scanner(System.in);
-	String command;
-	while (true){
-		System.out.println("Введите команду:");
-		command = scanner.nextLine();
+	System.out.println("Введите команду:"); 
+	String command= scanner.nextLine();
+	while (!command.equals("exit")){ // заменено условие // было true
 		if(command.equals("getFreeRooms")){
 			hotel.getFreeRooms();
 		}
@@ -47,16 +46,19 @@ public static void main(String[] args) {
 			System.out.print("Введите номер комнаты для бронирования: ");
 			byte roomNumber = (byte) scanner.nextInt();
 			hotel.reserveRoom(roomNumber);
+			command= scanner.nextLine(); // чтобы не дублировалась фраза "Введите команду:"
 		}
 		else if (command.equals("checkoutRoom")) {
 			System.out.print("Введите номер освобождаемой комнаты: ");
 			byte roomNumber = (byte) scanner.nextInt();
 			hotel.checkoutRoom(roomNumber);
+			command= scanner.nextLine(); // чтобы не дублировалась фраза "Введите команду:"
 		}
 		else if (command.equals("getRoom")) {
 			System.out.print("Введите номер комнаты: ");
 			byte roomNumber = (byte) scanner.nextInt();
 			hotel.getRoom(roomNumber);
+			command= scanner.nextLine(); // чтобы не дублировалась фраза "Введите команду:"
 		}
 		else if (command.equals("help")){
 			System.out.print("------------------\n"+
@@ -69,9 +71,8 @@ public static void main(String[] args) {
 							"help - список команд;\n"+
 							"exit - выход;\n"+"------------------\n");
 		}
-		else if (command.equals("exit")){
-			break;
-		}
+		System.out.println("Введите команду:");
+		command = scanner.nextLine();
 	}
 
 }
