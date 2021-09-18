@@ -57,10 +57,9 @@ static void checkProxy(String ip, int port) { //static void checkProxy
         // Читаем ответ от сервера пока не встретится null
         while ((inputLine = in.readLine()) != null) {
             System.out.println("IP: " + inputLine + " - работает!");
-            writingToFile(inputLine);
+            String goodIp = ip+" : "+port;
+            writingToFile(goodIp);
         }
-
-        // ----------------запись здесь приводит к ошибке в 23 стоке----------------------
         // Закрываем поток ввода
         in.close();
 
@@ -71,9 +70,9 @@ static void checkProxy(String ip, int port) { //static void checkProxy
 
 }
 
-static void writingToFile(String line) throws IOException {
+static void writingToFile(String goodIp) throws IOException {
     FileOutputStream fos = new FileOutputStream("E:\\ITcourse\\professional_2021\\java_educational_projects\\folder_workingWithFiles\\files\\good_ip.txt", true);
-    String test = line + "\n";
+    String test = goodIp + "\n";
     byte[] buffer = test.getBytes();
     fos.write(buffer);
 }
